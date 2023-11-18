@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:peter_space/app/shared/components/input-text_widget.dart';
 import 'package:peter_space/app/shared/components/primary-button_widget.dart';
@@ -56,12 +57,40 @@ class FormCreateAccountWidget extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 10),
-              child: Text(
-                'Yes, I understand and accept the terms of service',
-                style: FontStyle().small(),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.check_box_outlined,
+                    color: Colors.green.shade400,
+                  ),
+                  Text(
+                    'Yes, I understand and accept the terms of service',
+                    style: FontStyle().small(),
+                  ),
+                ],
               ),
             ),
-            const PrimaryButtonWidget()
+            const PrimaryButtonWidget(),
+            Padding(
+              padding: const EdgeInsets.only(top: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Already registered?',
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Modular.to.navigate('/login');
+                    },
+                    child: Text(
+                      ' Login',
+                      style: TextStyle(color: Colors.blue.shade400),
+                    ),
+                  ),
+                ],
+              ),
+            )
           ],
         ));
   }

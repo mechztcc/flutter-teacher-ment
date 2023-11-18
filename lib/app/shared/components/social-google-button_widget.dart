@@ -27,7 +27,7 @@ class SocialGoogleButtonWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.facebook, color: Colors.red.shade400),
+            Icon(Icons.facebook, color: Colors.blue.shade400),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 10),
               child: const Text(

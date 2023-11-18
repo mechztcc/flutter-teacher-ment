@@ -23,6 +23,7 @@ class CreateAccountPageState extends State<CreateAccountPage> {
             height: MediaQuery.of(context).size.height,
             child: const Expanded(
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[FormCreateAccountWidget()],
               ),
             ),
