@@ -4,10 +4,9 @@ import 'package:peter_space/app/shared/components/input-text_widget.dart';
 import 'package:peter_space/app/shared/components/primary-button_widget.dart';
 import 'package:peter_space/app/shared/styles/font_style.dart';
 
-class FormCreateAccountWidget extends StatelessWidget {
+class FormLoginWidget extends StatelessWidget {
   final String title;
-  const FormCreateAccountWidget(
-      {Key? key, this.title = "FormCreateAccountWidget"})
+  const FormLoginWidget({Key? key, this.title = "FormLoginWidget"})
       : super(key: key);
 
   @override
@@ -20,21 +19,15 @@ class FormCreateAccountWidget extends StatelessWidget {
             Image.asset(
               'assets/logo.png',
             ),
-            Text(
-              'Create account',
-              style: FontStyle().header(),
-            ),
-            Text(
-              'its easy, just take a minute and provided details',
-              style: FontStyle().span(),
-            ),
             const SizedBox(
               height: 20,
             ),
-            InputTextWidget(
-              label: 'Name',
-              prependIcon: const Icon(Icons.person),
-              obscure: false,
+            Text(
+              'Login into your account',
+              style: FontStyle().header(),
+            ),
+            const SizedBox(
+              height: 20,
             ),
             InputTextWidget(
               label: 'Email',
@@ -47,21 +40,6 @@ class FormCreateAccountWidget extends StatelessWidget {
               obscure: true,
               type: 'password',
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.check_box_outlined,
-                    color: Colors.blue.shade400,
-                  ),
-                  Text(
-                    'Yes, I understand and accept the terms of service',
-                    style: FontStyle().small(),
-                  ),
-                ],
-              ),
-            ),
             const PrimaryButtonWidget(),
             Padding(
               padding: const EdgeInsets.only(top: 15),
@@ -69,14 +47,14 @@ class FormCreateAccountWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    'Already registered?',
+                    'Do not have account?',
                   ),
                   GestureDetector(
                     onTap: () {
-                      Modular.to.navigate('/auth/login');
+                      Modular.to.navigate('/auth/create-account');
                     },
                     child: Text(
-                      ' Login',
+                      ' Register',
                       style: TextStyle(color: Colors.blue.shade400),
                     ),
                   ),

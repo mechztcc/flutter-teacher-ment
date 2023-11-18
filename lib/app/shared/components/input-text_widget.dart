@@ -26,17 +26,25 @@ class _InputTextWidgetState extends State<InputTextWidget> {
       child: TextFormField(
         obscureText: obscured,
         decoration: InputDecoration(
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-            labelText: widget.label,
-            prefixIcon: IconButton(
-              icon: widget.prependIcon,
-              onPressed: () {
-                setState(() {
-                  widget.obscure =
-                      widget.type == 'password' ? !widget.obscure : false;
-                });
-              },
-            )),
+          floatingLabelStyle: const TextStyle(color: Colors.blue),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.blue.shade400),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          labelText: widget.label,
+          prefixIcon: IconButton(
+            icon: widget.prependIcon,
+            onPressed: () {
+              setState(() {
+                widget.obscure =
+                    widget.type == 'password' ? !widget.obscure : false;
+              });
+            },
+          ),
+        ),
       ),
     );
   }
