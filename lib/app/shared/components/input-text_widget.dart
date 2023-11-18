@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class InputTextWidget extends StatefulWidget {
   final String label;
   final Icon prependIcon;
+  final TextEditingController controller;
+  final validator;
   bool obscure;
   String? type;
   InputTextWidget({
@@ -10,6 +13,8 @@ class InputTextWidget extends StatefulWidget {
     required this.label,
     required this.prependIcon,
     required this.obscure,
+    required this.controller,
+    required this.validator,
     this.type,
   }) : super(key: key);
 
@@ -24,9 +29,13 @@ class _InputTextWidgetState extends State<InputTextWidget> {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 10),
       child: TextFormField(
+        controller: widget.controller,
+        validator: widget.validator,
         obscureText: obscured,
+        style: GoogleFonts.rajdhani(),
         decoration: InputDecoration(
-          floatingLabelStyle: const TextStyle(color: Colors.blue),
+          labelStyle: GoogleFonts.rajdhani(),
+          floatingLabelStyle: GoogleFonts.rajdhani(color: Colors.blue),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           ),

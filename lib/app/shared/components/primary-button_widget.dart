@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PrimaryButtonWidget extends StatelessWidget {
   final String title;
-  const PrimaryButtonWidget({Key? key, this.title = "PrimaryButtonWidget"})
-      : super(key: key);
+  final Function onPress;
+  final bool isLoading;
+  final String label;
+  const PrimaryButtonWidget({
+    Key? key,
+    this.title = "PrimaryButtonWidget",
+    required this.onPress,
+    required this.isLoading,
+    required this.label,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +21,11 @@ class PrimaryButtonWidget extends StatelessWidget {
       width: double.infinity,
       height: 65,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          if (!isLoading) {
+            onPress();
+          }
+        },
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.blue.shade400,
           padding: const EdgeInsets.all(12),
@@ -23,9 +36,12 @@ class PrimaryButtonWidget extends StatelessWidget {
             ),
           ),
         ),
-        child: const Text(
-          'Create account',
-          style: TextStyle(color: Colors.white),
+        child: Text(
+          isLoading ? 'Loading...' : label,
+          style: GoogleFonts.rajdhani(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );
