@@ -37,6 +37,7 @@ class _InputTextWidgetState extends State<InputTextWidget> {
           labelStyle: GoogleFonts.rajdhani(),
           floatingLabelStyle: GoogleFonts.rajdhani(color: Colors.blue),
           border: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.grey.shade800),
             borderRadius: BorderRadius.circular(10),
           ),
           focusedBorder: OutlineInputBorder(
