@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:peter_space/app/modules/auth/components/form-login_widget.dart';
+import 'package:peter_space/app/modules/auth/components/form_login_widget.dart';
 
 class LoginPage extends StatefulWidget {
   final String title;
-  const LoginPage({Key? key, this.title = 'LoginPage'}) : super(key: key);
+  const LoginPage({
+    Key? key,
+    this.title = 'LoginPage',
+  }) : super(key: key);
   @override
   LoginPageState createState() => LoginPageState();
 }
 
 class LoginPageState extends State<LoginPage> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

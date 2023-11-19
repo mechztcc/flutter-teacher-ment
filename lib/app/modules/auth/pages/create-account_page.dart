@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:peter_space/app/modules/auth/components/form-create-account_widget.dart';
+import 'package:peter_space/app/modules/auth/components/form_create-account_widget.dart';
 
 class CreateAccountPage extends StatefulWidget {
   final String title;

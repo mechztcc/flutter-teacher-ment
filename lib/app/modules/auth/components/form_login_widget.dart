@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:peter_space/app/modules/auth/stores/login_store.dart';
 import 'package:peter_space/app/shared/components/input-text_widget.dart';
 import 'package:peter_space/app/shared/components/primary-button_widget.dart';
 import 'package:peter_space/app/shared/styles/font_style.dart';
@@ -16,23 +17,29 @@ class FormLoginWidget extends StatefulWidget {
 }
 
 class _FormLoginWidgetState extends State<FormLoginWidget> {
-  final _formKey = GlobalKey<FormState>();
-  final emailEC = TextEditingController();
-  final passwordEC = TextEditingController();
+  late final LoginStore store;
 
-  var isLoading = false;
-
-  onValidateForm() {
-    var isValid = _formKey.currentState?.validate();
-    print(isValid);
+  @override
+  void initState() {
+    super.initState();
+    store = Modular.get<LoginStore>();
   }
 
   @override
   Widget build(BuildContext context) {
+    onValidateForm() async {
+      var isValid = store.formKey.currentState?.validate() ?? false;
+
+      if (!isValid) {
+        return;
+      }
+      store.onLogin(context);
+    }
+
     return SizedBox(
         width: double.infinity,
         child: Form(
-          key: _formKey,
+          key: store.formKey,
           autovalidateMode: AutovalidateMode.always,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -59,7 +66,7 @@ class _FormLoginWidgetState extends State<FormLoginWidget> {
                 label: 'Email',
                 prependIcon: const Icon(Icons.email),
                 obscure: false,
-                controller: emailEC,
+                controller: store.emailEC,
                 validator: Validatorless.multiple([
                   Validatorless.required('Email is required'),
                   Validatorless.email('Email invalid')
@@ -70,12 +77,12 @@ class _FormLoginWidgetState extends State<FormLoginWidget> {
                 prependIcon: const Icon(Icons.lock),
                 obscure: true,
                 type: 'password',
-                controller: passwordEC,
+                controller: store.passwordEC,
                 validator: Validatorless.required('Name is required'),
               ),
               PrimaryButtonWidget(
                 onPress: onValidateForm,
-                isLoading: isLoading,
+                isLoading: store.isloading,
                 label: 'Login',
               ),
               Padding(
