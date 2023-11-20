@@ -26,6 +26,10 @@ class PrimaryButtonWidget extends StatelessWidget {
     if (type == 'primary') {
       return Colors.blue.shade300;
     }
+
+    if (isLoading) {
+      return Colors.blue.shade200;
+    }
     return Colors.white;
   }
 

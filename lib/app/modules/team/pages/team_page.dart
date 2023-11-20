@@ -22,20 +22,25 @@ class TeamPageState extends State<TeamPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: const NavegationBarWidget(index: 1),
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            Observer(
-              builder: (_) => const UserInformationWidget(name: 'Alberto'),
-            ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * .9,
+      body: Column(
+        children: <Widget>[
+          Observer(
+            builder: (_) => const UserInformationWidget(name: 'Alberto paiva'),
+          ),
+          SizedBox(
+            width: MediaQuery.of(context).size.width * .9,
+            height: MediaQuery.of(context).size.height * .7,
+            child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'Team Name',
                     style: FontStyle().subtitle(),
+                  ),
+                  Text(
+                    'Updated at 12:00',
+                    style: FontStyle().span(),
                   ),
                   const CardRankMemberWidget(position: 1),
                   const CardRankMemberWidget(position: 2),
@@ -50,9 +55,9 @@ class TeamPageState extends State<TeamPage> {
                   const CardRankMemberWidget(position: 7),
                 ],
               ),
-            )
-          ],
-        ),
+            ),
+          )
+        ],
       ),
     );
   }

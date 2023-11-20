@@ -32,7 +32,7 @@ class _FormLoginWidgetState extends State<FormLoginWidget> {
         padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: const Color.fromARGB(255, 239, 243, 249),
+          color: Colors.white,
           boxShadow: const [
             BoxShadow(
               color: Color.fromARGB(255, 210, 212, 217),

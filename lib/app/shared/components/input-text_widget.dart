@@ -39,10 +39,10 @@ class _InputTextWidgetState extends State<InputTextWidget> {
           labelStyle: GoogleFonts.rajdhani(),
           floatingLabelStyle: GoogleFonts.rajdhani(color: Colors.blue),
           border: OutlineInputBorder(
-            borderSide: const BorderSide(
-              color: Colors.white,
+            borderSide: BorderSide(
+              color: Colors.grey.shade400,
               style: BorderStyle.solid,
-              width: 2,
+              width: 1,
             ),
             borderRadius: BorderRadius.circular(10),
           ),
@@ -51,12 +51,13 @@ class _InputTextWidgetState extends State<InputTextWidget> {
             borderRadius: BorderRadius.circular(10),
           ),
           enabledBorder: OutlineInputBorder(
-              borderSide: const BorderSide(
-                color: Colors.white,
-                style: BorderStyle.solid,
-                width: 2,
-              ),
-              borderRadius: BorderRadius.circular(10)),
+            borderSide: BorderSide(
+              color: Colors.grey.shade400,
+              style: BorderStyle.solid,
+              width: 1,
+            ),
+            borderRadius: BorderRadius.circular(10),
+          ),
           labelText: widget.label,
           prefixIcon: IconButton(
             icon: widget.prependIcon,

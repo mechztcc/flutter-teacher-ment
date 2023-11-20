@@ -50,14 +50,6 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       Row(
                         children: [
-                          const Icon(
-                            FontAwesomeIcons.hourglassHalf,
-                            size: 23,
-                            color: Colors.blue,
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
                           Text(
                             'Running Lessons',
                             style: FontStyle().subtitle(),
