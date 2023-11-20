@@ -6,9 +6,6 @@ final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    MaterialApp(
-      navigatorKey: navigatorKey,
-    );
     return MaterialApp.router(
       title: 'Flutter Slidy',
       theme: ThemeData(primarySwatch: Colors.blue),

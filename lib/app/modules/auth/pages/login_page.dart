@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:peter_space/app/modules/auth/components/form_login_widget.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   final String title;
-  const LoginPage({
+
+  LoginPage({
     Key? key,
     this.title = 'LoginPage',
   }) : super(key: key);
@@ -12,9 +14,12 @@ class LoginPage extends StatefulWidget {
 }
 
 class LoginPageState extends State<LoginPage> {
+  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+
   @override
   void initState() {
     super.initState();
+    _prefs.then((prefs) => prefs.clear());
   }
 
   @override
