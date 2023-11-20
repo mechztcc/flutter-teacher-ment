@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
@@ -32,11 +34,12 @@ abstract class LoginStoreBase with Store {
       };
       loginData = await authService.onLogin(payload);
     } on DioException catch (e) {
-      print('deu erro ${e.response!.data['message']}');
-      var snackBar = SnackBar(
-        content: Text(e.response!.statusMessage!),
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(e.response!.data['message']),
+          showCloseIcon: true,
+        ),
       );
-      ScaffoldMessenger.of(context).showSnackBar(snackBar);
       throw (e);
     }
   }

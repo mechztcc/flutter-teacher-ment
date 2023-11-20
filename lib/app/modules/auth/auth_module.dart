@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:peter_space/app/modules/auth/pages/create-account_page.dart';
 import 'package:peter_space/app/modules/auth/pages/login_page.dart';
@@ -5,13 +6,15 @@ import 'package:peter_space/app/modules/auth/repository/auth_repository.dart';
 import 'package:peter_space/app/modules/auth/services/auth_service.dart';
 import 'package:peter_space/app/modules/auth/stores/login_store.dart';
 import 'package:peter_space/app/modules/home/home_module.dart';
+import 'package:peter_space/app/shared/services/http_service.dart';
 
 class AuthModule extends Module {
   @override
   final List<Bind> binds = [
     Bind.lazySingleton((i) => LoginStore(i())),
     Bind.lazySingleton((i) => AuthService(i())),
-    Bind.lazySingleton((i) => AuthRepository()),
+    Bind.lazySingleton((i) => AuthRepository(i())),
+    Bind.lazySingleton((i) => HttpService())
   ];
 
   @override
