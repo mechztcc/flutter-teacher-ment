@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:peter_space/app/modules/auth/shared/stores/create_account/create_account_store.dart';
 import 'package:peter_space/app/shared/components/input-text_widget.dart';
 import 'package:peter_space/app/shared/components/primary-button_widget.dart';
 import 'package:peter_space/app/shared/styles/font_style.dart';
@@ -18,16 +20,12 @@ class FormCreateAccountWidget extends StatefulWidget {
 }
 
 class _FormCreateAccountWidgetState extends State<FormCreateAccountWidget> {
-  final _formKey = GlobalKey<FormState>();
-  final nameEC = TextEditingController();
-  final emailEC = TextEditingController();
-  final passwordEC = TextEditingController();
+  late final CreateAccountStore store;
 
-  final isLoading = false;
-
-  onValidateForm() {
-    var isValid = _formKey.currentState?.validate();
-    print(isValid);
+  @override
+  void initState() {
+    super.initState();
+    store = Modular.get<CreateAccountStore>();
   }
 
   @override
@@ -35,7 +33,7 @@ class _FormCreateAccountWidgetState extends State<FormCreateAccountWidget> {
     return SizedBox(
         width: double.infinity,
         child: Form(
-          key: _formKey,
+          key: store.formKey,
           autovalidateMode: AutovalidateMode.always,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -59,14 +57,14 @@ class _FormCreateAccountWidgetState extends State<FormCreateAccountWidget> {
                 label: 'Name',
                 prependIcon: const Icon(Icons.person),
                 obscure: false,
-                controller: nameEC,
+                controller: store.nameEC,
                 validator: Validatorless.required('Name is required'),
               ),
               InputTextWidget(
                 label: 'Email',
                 prependIcon: const Icon(Icons.email),
                 obscure: false,
-                controller: emailEC,
+                controller: store.emailEC,
                 validator: Validatorless.multiple([
                   Validatorless.required('Email is required'),
                   Validatorless.email('Email invalid')
@@ -77,7 +75,7 @@ class _FormCreateAccountWidgetState extends State<FormCreateAccountWidget> {
                 prependIcon: const Icon(Icons.lock),
                 obscure: true,
                 type: 'password',
-                controller: passwordEC,
+                controller: store.passwordEC,
                 validator: Validatorless.required('Name is required'),
               ),
               Padding(
@@ -95,10 +93,14 @@ class _FormCreateAccountWidgetState extends State<FormCreateAccountWidget> {
                   ],
                 ),
               ),
-              PrimaryButtonWidget(
-                onPress: () {},
-                isLoading: isLoading,
-                label: 'Create Account',
+              Observer(
+                builder: (_) => PrimaryButtonWidget(
+                  onPress: () {
+                    store.onValidateForm();
+                  },
+                  isLoading: store.isloading,
+                  label: 'Create Account',
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 15),

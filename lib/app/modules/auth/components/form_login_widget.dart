@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:peter_space/app/modules/auth/stores/login_store.dart';
+import 'package:peter_space/app/modules/auth/shared/stores/login/login_store.dart';
 import 'package:peter_space/app/shared/components/input-text_widget.dart';
 import 'package:peter_space/app/shared/components/primary-button_widget.dart';
 import 'package:peter_space/app/shared/styles/font_style.dart';
@@ -27,15 +28,6 @@ class _FormLoginWidgetState extends State<FormLoginWidget> {
 
   @override
   Widget build(BuildContext context) {
-    onValidateForm() async {
-      var isValid = store.formKey.currentState?.validate() ?? false;
-
-      if (!isValid) {
-        return;
-      }
-      store.onLogin(context);
-    }
-
     return SizedBox(
         width: double.infinity,
         child: Form(
@@ -78,12 +70,17 @@ class _FormLoginWidgetState extends State<FormLoginWidget> {
                 obscure: true,
                 type: 'password',
                 controller: store.passwordEC,
-                validator: Validatorless.required('Name is required'),
+                validator: Validatorless.multiple([
+                  Validatorless.required('Name is required'),
+                  Validatorless.min(6, 'Password must be has min 6 characteres')
+                ]),
               ),
-              PrimaryButtonWidget(
-                onPress: onValidateForm,
-                isLoading: store.isloading,
-                label: 'Login',
+              Observer(
+                builder: (_) => PrimaryButtonWidget(
+                  onPress: store.onValidateForm,
+                  isLoading: store.isloading,
+                  label: 'Login',
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 15),

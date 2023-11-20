@@ -1,5 +1,5 @@
-import 'package:peter_space/app/modules/auth/models/login.dart';
-import 'package:peter_space/app/modules/auth/repository/auth_repository.dart';
+import 'package:peter_space/app/modules/auth/shared/models/login.dart';
+import 'package:peter_space/app/modules/auth/shared/repository/auth_repository.dart';
 
 class AuthService {
   final AuthRepository repository;
