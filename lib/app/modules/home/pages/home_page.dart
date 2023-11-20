@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           const Icon(
                             FontAwesomeIcons.hourglassHalf,
-                            size: 30,
+                            size: 23,
                             color: Colors.blue,
                           ),
                           const SizedBox(
