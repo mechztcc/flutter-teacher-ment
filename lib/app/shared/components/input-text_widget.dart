@@ -34,16 +34,29 @@ class _InputTextWidgetState extends State<InputTextWidget> {
         obscureText: obscured,
         style: GoogleFonts.rajdhani(),
         decoration: InputDecoration(
+          fillColor: Colors.white,
+          filled: true,
           labelStyle: GoogleFonts.rajdhani(),
           floatingLabelStyle: GoogleFonts.rajdhani(color: Colors.blue),
           border: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey.shade800),
+            borderSide: const BorderSide(
+              color: Colors.white,
+              style: BorderStyle.solid,
+              width: 2,
+            ),
             borderRadius: BorderRadius.circular(10),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.blue.shade400),
+            borderSide: BorderSide(color: Colors.blue.shade400, width: 2),
             borderRadius: BorderRadius.circular(10),
           ),
+          enabledBorder: OutlineInputBorder(
+              borderSide: const BorderSide(
+                color: Colors.white,
+                style: BorderStyle.solid,
+                width: 2,
+              ),
+              borderRadius: BorderRadius.circular(10)),
           labelText: widget.label,
           prefixIcon: IconButton(
             icon: widget.prependIcon,

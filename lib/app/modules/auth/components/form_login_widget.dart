@@ -28,7 +28,20 @@ class _FormLoginWidgetState extends State<FormLoginWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: const Color.fromARGB(255, 239, 243, 249),
+          boxShadow: const [
+            BoxShadow(
+              color: Color.fromARGB(255, 210, 212, 217),
+              spreadRadius: 2,
+              blurRadius: 3,
+              offset: Offset(0, 3), // changes position of shadow
+            ),
+          ],
+        ),
         width: double.infinity,
         child: Form(
           key: store.formKey,
@@ -37,9 +50,6 @@ class _FormLoginWidgetState extends State<FormLoginWidget> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(
-                'assets/logo.png',
-              ),
               const SizedBox(
                 height: 20,
               ),
@@ -80,6 +90,7 @@ class _FormLoginWidgetState extends State<FormLoginWidget> {
                   onPress: () {
                     store.onValidateForm(context);
                   },
+                  type: 'primary',
                   isLoading: store.isloading,
                   label: 'Login',
                 ),

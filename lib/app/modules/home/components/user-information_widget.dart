@@ -17,7 +17,7 @@ class UserInformationWidget extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(10, 60, 10, 20),
       margin: const EdgeInsets.only(bottom: 30),
       decoration: const BoxDecoration(
-        color: Color.fromARGB(255, 239, 243, 249),
+        color: Colors.white,
         boxShadow: [
           BoxShadow(
             color: Color.fromARGB(255, 210, 212, 217),
