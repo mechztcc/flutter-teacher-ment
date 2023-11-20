@@ -39,6 +39,9 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const SizedBox(
+                  height: 50,
+                ),
                 Row(
                   children: [
                     const Icon(
@@ -89,6 +92,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
+                const CardRunningLessonWidget(),
+                const CardRunningLessonWidget(),
+                const CardRunningLessonWidget(),
                 const CardRunningLessonWidget(),
                 const CardRunningLessonWidget(),
               ],
