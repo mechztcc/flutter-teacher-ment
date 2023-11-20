@@ -1,3 +1,4 @@
+import 'package:peter_space/app/modules/auth/shared/models/create_account.dart';
 import 'package:peter_space/app/modules/auth/shared/models/login.dart';
 import 'package:peter_space/app/shared/services/http_service.dart';
 
@@ -7,9 +8,14 @@ class AuthRepository {
 
   AuthRepository(this.http);
 
+  Future<CreateAccountModel> onCreateAccount(
+      Map<String, dynamic> payload) async {
+    var response = await http.post(path: 'users', payload: payload);
+    return CreateAccountModel.fromJson(response.data);
+  }
+
   Future<LoginModel> onLogin(Map<String, dynamic> payload) async {
     var response = await http.post(path: 'auth', payload: payload);
-    print(response);
     return LoginModel.fromJson(response.data);
   }
 }

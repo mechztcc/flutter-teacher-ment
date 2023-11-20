@@ -25,6 +25,14 @@ mixin _$CreateAccountStore on _CreateAccountStoreBase, Store {
     });
   }
 
+  late final _$onSubmitAsyncAction =
+      AsyncAction('_CreateAccountStoreBase.onSubmit', context: context);
+
+  @override
+  Future<void> onSubmit(dynamic context) {
+    return _$onSubmitAsyncAction.run(() => super.onSubmit(context));
+  }
+
   @override
   String toString() {
     return '''

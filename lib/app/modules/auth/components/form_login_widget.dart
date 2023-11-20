@@ -76,8 +76,10 @@ class _FormLoginWidgetState extends State<FormLoginWidget> {
                 ]),
               ),
               Observer(
-                builder: (_) => PrimaryButtonWidget(
-                  onPress: store.onValidateForm,
+                builder: (context) => PrimaryButtonWidget(
+                  onPress: () {
+                    store.onValidateForm(context);
+                  },
                   isLoading: store.isloading,
                   label: 'Login',
                 ),

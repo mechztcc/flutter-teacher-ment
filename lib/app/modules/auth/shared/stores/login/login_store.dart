@@ -26,7 +26,7 @@ abstract class LoginStoreBase with Store {
 
   AlertsService alert = Modular.get();
 
-  onValidateForm() async {
+  onValidateForm(BuildContext context) async {
     var isValid = formKey.currentState?.validate() ?? false;
 
     if (!isValid) {

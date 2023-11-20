@@ -76,7 +76,10 @@ class _FormCreateAccountWidgetState extends State<FormCreateAccountWidget> {
                 obscure: true,
                 type: 'password',
                 controller: store.passwordEC,
-                validator: Validatorless.required('Name is required'),
+                validator: Validatorless.multiple([
+                  Validatorless.required('Password is required'),
+                  Validatorless.min(6, 'Password required min 6 characters')
+                ]),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10),
@@ -94,9 +97,9 @@ class _FormCreateAccountWidgetState extends State<FormCreateAccountWidget> {
                 ),
               ),
               Observer(
-                builder: (_) => PrimaryButtonWidget(
+                builder: (context) => PrimaryButtonWidget(
                   onPress: () {
-                    store.onValidateForm();
+                    store.onValidateForm(context);
                   },
                   isLoading: store.isloading,
                   label: 'Create Account',
