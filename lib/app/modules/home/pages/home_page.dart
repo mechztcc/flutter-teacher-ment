@@ -32,7 +32,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const NavegationBarWidget(),
+      bottomNavigationBar: const NavegationBarWidget(
+        index: 0,
+      ),
       body: Center(
         child: SingleChildScrollView(
           child: Column(

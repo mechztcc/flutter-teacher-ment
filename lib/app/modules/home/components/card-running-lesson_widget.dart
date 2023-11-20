@@ -20,7 +20,7 @@ class _CardRunningLessonWidgetState extends State<CardRunningLessonWidget>
     with SingleTickerProviderStateMixin {
   late AnimationController controller;
   late Animation<double> animation;
-  final Duration duration = const Duration(seconds: 2);
+  final Duration duration = const Duration(seconds: 1);
 
   @override
   void initState() {
@@ -45,16 +45,17 @@ class _CardRunningLessonWidgetState extends State<CardRunningLessonWidget>
         margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: Colors.white,
-            boxShadow: const [
-              BoxShadow(
-                color: Color.fromARGB(255, 210, 212, 217),
-                spreadRadius: 2,
-                blurRadius: 3,
-                offset: Offset(0, 3), // changes position of shadow
-              ),
-            ]),
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.white,
+          boxShadow: const [
+            BoxShadow(
+              color: Color.fromARGB(255, 210, 212, 217),
+              spreadRadius: 2,
+              blurRadius: 3,
+              offset: Offset(0, 3), // changes position of shadow
+            ),
+          ],
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,

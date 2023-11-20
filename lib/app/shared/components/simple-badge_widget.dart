@@ -29,6 +29,10 @@ class SimpleBadgeWidget extends StatelessWidget {
     if (type == 'premium') {
       return FontAwesomeIcons.trophy;
     }
+
+    if (type == 'points') {
+      return FontAwesomeIcons.bolt;
+    }
     return FontAwesomeIcons.puzzlePiece;
   }
 
