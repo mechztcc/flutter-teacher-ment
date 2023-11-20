@@ -78,30 +78,58 @@ class CardRunningLessonWidget extends StatelessWidget {
               Text('História do brasil')
             ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
                 children: [
-                  Icon(
-                    FontAwesomeIcons.calendar,
+                  const Icon(
+                    FontAwesomeIcons.graduationCap,
                     size: 15,
+                    color: Colors.blue,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 5,
                   ),
-                  Text('End at: 22/10/2022 10:00'),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.7,
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text('Teacher'),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Icon(
+                          FontAwesomeIcons.circleInfo,
+                          size: 15,
+                          color: Colors.grey,
+                        )
+                      ],
+                    ),
+                  )
                 ],
               ),
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  FontAwesomeIcons.magnifyingGlass,
-                  size: 15,
-                ),
-              )
+              const Text('Teacher Alberto')
+            ],
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          const Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(
+                FontAwesomeIcons.calendar,
+                size: 15,
+              ),
+              SizedBox(
+                width: 5,
+              ),
+              Text('End at: 22/10/2022 10:00'),
             ],
           ),
           PrimaryButtonWidget(
