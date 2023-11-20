@@ -25,10 +25,40 @@ mixin _$HomeStore on HomeStoreBase, Store {
     });
   }
 
+  late final _$nameAtom = Atom(name: 'HomeStoreBase.name', context: context);
+
+  @override
+  String? get name {
+    _$nameAtom.reportRead();
+    return super.name;
+  }
+
+  @override
+  set name(String? value) {
+    _$nameAtom.reportWrite(value, super.name, () {
+      super.name = value;
+    });
+  }
+
+  late final _$HomeStoreBaseActionController =
+      ActionController(name: 'HomeStoreBase', context: context);
+
+  @override
+  dynamic initStore() {
+    final _$actionInfo = _$HomeStoreBaseActionController.startAction(
+        name: 'HomeStoreBase.initStore');
+    try {
+      return super.initStore();
+    } finally {
+      _$HomeStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
   @override
   String toString() {
     return '''
-counter: ${counter}
+counter: ${counter},
+name: ${name}
     ''';
   }
 }
