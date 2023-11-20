@@ -1,3 +1,4 @@
+import 'package:peter_space/app/modules/home/home_module.dart';
 import 'package:peter_space/app/shared/services/local_storage_service.dart';
 import 'package:peter_space/app/shared/services/alerts_service.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -15,5 +16,6 @@ class AppModule extends Module {
   final List<ModularRoute> routes = [
     ModuleRoute(Modular.initialRoute, module: SplashModule()),
     ModuleRoute('/auth', module: AuthModule()),
+    ModuleRoute('/home', module: HomeModule()),
   ];
 }

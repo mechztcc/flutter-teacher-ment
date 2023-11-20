@@ -50,7 +50,7 @@ abstract class LoginStoreBase with Store {
       prefs.setString('email', loginData!.user!.email!);
       prefs.setString('token', loginData!.user!.token!);
 
-      Modular.to.navigate('/');
+      Modular.to.navigate('/home');
     } on DioException catch (e) {
       alert.error(e, context);
       rethrow;

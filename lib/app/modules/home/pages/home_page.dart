@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'home_store.dart';
+import 'package:peter_space/app/modules/home/shared/stores/home_store.dart';
+import 'package:peter_space/app/shared/components/navegation_bar_widget.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
@@ -26,14 +27,9 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('Counter'),
       ),
+      bottomNavigationBar: NavegationBarWidget(),
       body: Observer(
         builder: (context) => Text('${store.counter}'),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Modular.to.navigate('/auth/create-account');
-        },
-        child: Icon(Icons.add),
       ),
     );
   }
