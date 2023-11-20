@@ -6,20 +6,31 @@ class PrimaryButtonWidget extends StatelessWidget {
   final Function onPress;
   final bool isLoading;
   final String label;
-  const PrimaryButtonWidget({
+  double? height;
+  String? type;
+  PrimaryButtonWidget({
     Key? key,
     this.title = "PrimaryButtonWidget",
     required this.onPress,
     required this.isLoading,
     required this.label,
+    this.type,
+    this.height,
   }) : super(key: key);
+
+  Color getColor() {
+    if (type == 'danger') {
+      return Colors.red.shade400;
+    }
+    return Colors.blue.shade400;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 15),
       width: double.infinity,
-      height: 65,
+      height: height ?? 65,
       child: ElevatedButton(
         onPressed: () {
           if (!isLoading) {
@@ -27,7 +38,7 @@ class PrimaryButtonWidget extends StatelessWidget {
           }
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.blue.shade400,
+          backgroundColor: getColor(),
           padding: const EdgeInsets.all(12),
           elevation: 2,
           shape: const RoundedRectangleBorder(

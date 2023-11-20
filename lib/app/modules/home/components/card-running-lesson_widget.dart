@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:peter_space/app/shared/components/badge_level_widget.dart';
+import 'package:peter_space/app/shared/components/primary-button_widget.dart';
 import 'package:peter_space/app/shared/components/simple-badge_widget.dart';
 
 class CardRunningLessonWidget extends StatelessWidget {
@@ -102,6 +103,13 @@ class CardRunningLessonWidget extends StatelessWidget {
                 ),
               )
             ],
+          ),
+          PrimaryButtonWidget(
+            onPress: () {},
+            isLoading: false,
+            label: 'START',
+            type: 'danger',
+            height: 45,
           )
         ],
       ),
