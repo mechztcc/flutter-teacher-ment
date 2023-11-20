@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:peter_space/app/modules/home/shared/stores/home_store.dart';
-import 'package:peter_space/app/shared/components/badge_level_widget.dart';
-import 'package:peter_space/app/shared/components/navegation_bar_widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:peter_space/app/shared/components/simple-badge_widget.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:peter_space/app/modules/home/components/card-running-lesson_widget.dart';
+import 'package:peter_space/app/modules/home/shared/stores/home_store.dart';
+import 'package:peter_space/app/shared/components/navegation_bar_widget.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
@@ -59,29 +58,33 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       bottomNavigationBar: const NavegationBarWidget(),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text('Running Lessons'),
-          Container(
-            child: const Row(
+      body: Center(
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width * 0.9,
+          height: MediaQuery.of(context).size.height * 0.5,
+          child: const SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                BadgeLevelWidget(
-                  level: 3,
-                  label: 'Expert',
+                Row(
+                  children: [
+                    Icon(
+                      FontAwesomeIcons.hourglassHalf,
+                      size: 15,
+                      color: Colors.blue,
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text('Running Lessons'),
+                  ],
                 ),
-                SimpleBadgeWidget(
-                  label: '5 Points',
-                  type: 'points',
-                ),
-                SimpleBadgeWidget(
-                  label: '5 Questions',
-                  type: 'questions',
-                ),
+                CardRunningLessonWidget(),
+                CardRunningLessonWidget(),
               ],
             ),
           ),
-        ],
+        ),
       ),
     );
   }
