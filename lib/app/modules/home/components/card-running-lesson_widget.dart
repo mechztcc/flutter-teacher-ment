@@ -4,11 +4,32 @@ import 'package:peter_space/app/shared/components/badge_level_widget.dart';
 import 'package:peter_space/app/shared/components/primary-button_widget.dart';
 import 'package:peter_space/app/shared/components/simple-badge_widget.dart';
 
-class CardRunningLessonWidget extends StatelessWidget {
+class CardRunningLessonWidget extends StatefulWidget {
   final String title;
+  final Duration duration = const Duration(seconds: 3);
+
   const CardRunningLessonWidget(
       {Key? key, this.title = "CardRunningLessonWidget"})
       : super(key: key);
+
+  @override
+  State<CardRunningLessonWidget> createState() =>
+      _CardRunningLessonWidgetState();
+}
+
+class _CardRunningLessonWidgetState extends State<CardRunningLessonWidget>
+    with SingleTickerProviderStateMixin {
+  late AnimationController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = AnimationController(vsync: this, duration: widget.duration);
+
+    controller.addListener(() {
+      setState(() {});
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
