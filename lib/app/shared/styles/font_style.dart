@@ -10,6 +10,14 @@ class FontStyle {
     );
   }
 
+  subtitle() {
+    return GoogleFonts.rajdhani(
+      fontSize: 30,
+      fontWeight: FontWeight.bold,
+      color: Colors.grey.shade800,
+    );
+  }
+
   span() {
     return GoogleFonts.rajdhani(
       fontSize: 20,

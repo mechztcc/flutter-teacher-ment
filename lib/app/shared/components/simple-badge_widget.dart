@@ -17,12 +17,32 @@ class SimpleBadgeWidget extends StatelessWidget {
     if (type == 'questions') {
       return FontAwesomeIcons.book;
     }
+
+    if (type == 'exp') {
+      return FontAwesomeIcons.gamepad;
+    }
+
+    if (type == 'diamond') {
+      return FontAwesomeIcons.diamond;
+    }
+
+    if (type == 'premium') {
+      return FontAwesomeIcons.trophy;
+    }
     return FontAwesomeIcons.puzzlePiece;
   }
 
   Color findColor() {
     if (type == 'questions') {
       return Colors.green;
+    }
+
+    if (type == 'diamond') {
+      return Colors.cyan.shade400;
+    }
+
+    if (type == 'premium') {
+      return Colors.yellow.shade700;
     }
 
     return Colors.purple;
@@ -49,7 +69,7 @@ class SimpleBadgeWidget extends StatelessWidget {
             size: 15,
           ),
           const SizedBox(
-            width: 5,
+            width: 8,
           ),
           Text(
             label,

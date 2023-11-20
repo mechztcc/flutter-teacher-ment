@@ -6,6 +6,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:peter_space/app/modules/home/components/card-running-lesson_widget.dart';
 import 'package:peter_space/app/modules/home/shared/stores/home_store.dart';
 import 'package:peter_space/app/shared/components/navegation_bar_widget.dart';
+import 'package:peter_space/app/shared/components/simple-badge_widget.dart';
+import 'package:peter_space/app/shared/styles/font_style.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
@@ -29,57 +31,66 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Observer(
-          builder: (_) => Column(
-            children: [
-              Text(
-                'Welcome ${store.name}',
-                style: GoogleFonts.rajdhani(
-                  color: Colors.white,
-                ),
-              ),
-            ],
-          ),
-        ),
-        backgroundColor: Colors.blue,
-        toolbarHeight: 70,
-        actions: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(
-                onPressed: () {},
-                color: Colors.white,
-                icon: const Icon(Icons.person),
-              ),
-            ],
-          )
-        ],
-      ),
       bottomNavigationBar: const NavegationBarWidget(),
       body: Center(
         child: SizedBox(
           width: MediaQuery.of(context).size.width * 0.9,
-          child: const SingleChildScrollView(
+          child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
-                    Icon(
-                      FontAwesomeIcons.hourglassHalf,
-                      size: 15,
+                    const Icon(
+                      FontAwesomeIcons.person,
+                      size: 30,
                       color: Colors.blue,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
-                    Text('Running Lessons'),
+                    Observer(
+                      builder: (_) => Column(
+                        children: [
+                          Text('${store.name}', style: FontStyle().subtitle()),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
-                CardRunningLessonWidget(),
-                CardRunningLessonWidget(),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Row(children: [
+                  SimpleBadgeWidget(label: 'NVL 26', type: 'exp'),
+                  SimpleBadgeWidget(label: 'Diamond', type: 'diamond'),
+                  SimpleBadgeWidget(label: 'Premium', type: 'premium'),
+                ]),
+                const SizedBox(
+                  width: double.infinity,
+                  child: Divider(),
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                Row(
+                  children: [
+                    const Icon(
+                      FontAwesomeIcons.hourglassHalf,
+                      size: 30,
+                      color: Colors.blue,
+                    ),
+                    const SizedBox(
+                      width: 5,
+                    ),
+                    Text(
+                      'Running Lessons',
+                      style: FontStyle().subtitle(),
+                    ),
+                  ],
+                ),
+                const CardRunningLessonWidget(),
+                const CardRunningLessonWidget(),
               ],
             ),
           ),
