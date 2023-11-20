@@ -4,6 +4,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:peter_space/app/modules/home/components/card-running-lesson_widget.dart';
+import 'package:peter_space/app/modules/home/components/user-information_widget.dart';
 import 'package:peter_space/app/modules/home/shared/stores/home_store.dart';
 import 'package:peter_space/app/shared/components/navegation_bar_widget.dart';
 import 'package:peter_space/app/shared/components/simple-badge_widget.dart';
@@ -33,72 +34,44 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       bottomNavigationBar: const NavegationBarWidget(),
       body: Center(
-        child: SizedBox(
-          width: MediaQuery.of(context).size.width * 0.9,
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(
-                  height: 50,
-                ),
-                Row(
-                  children: [
-                    const Icon(
-                      FontAwesomeIcons.person,
-                      size: 30,
-                      color: Colors.blue,
-                    ),
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    Observer(
-                      builder: (_) => Column(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Observer(
+                builder: (_) => UserInformationWidget(name: store.name!),
+              ),
+              Center(
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * .9,
+                  child: Column(
+                    children: [
+                      Row(
                         children: [
-                          Text('${store.name}', style: FontStyle().subtitle()),
+                          const Icon(
+                            FontAwesomeIcons.hourglassHalf,
+                            size: 30,
+                            color: Colors.blue,
+                          ),
+                          const SizedBox(
+                            width: 5,
+                          ),
+                          Text(
+                            'Running Lessons',
+                            style: FontStyle().subtitle(),
+                          ),
                         ],
                       ),
-                    ),
-                  ],
+                      const CardRunningLessonWidget(),
+                      const CardRunningLessonWidget(),
+                      const CardRunningLessonWidget(),
+                      const CardRunningLessonWidget(),
+                      const CardRunningLessonWidget(),
+                    ],
+                  ),
                 ),
-                const SizedBox(
-                  height: 10,
-                ),
-                const Row(children: [
-                  SimpleBadgeWidget(label: 'NVL 26', type: 'exp'),
-                  SimpleBadgeWidget(label: 'Diamond', type: 'diamond'),
-                  SimpleBadgeWidget(label: 'Premium', type: 'premium'),
-                ]),
-                const SizedBox(
-                  width: double.infinity,
-                  child: Divider(),
-                ),
-                const SizedBox(
-                  height: 40,
-                ),
-                Row(
-                  children: [
-                    const Icon(
-                      FontAwesomeIcons.hourglassHalf,
-                      size: 30,
-                      color: Colors.blue,
-                    ),
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    Text(
-                      'Running Lessons',
-                      style: FontStyle().subtitle(),
-                    ),
-                  ],
-                ),
-                const CardRunningLessonWidget(),
-                const CardRunningLessonWidget(),
-                const CardRunningLessonWidget(),
-                const CardRunningLessonWidget(),
-                const CardRunningLessonWidget(),
-              ],
-            ),
+              )
+            ],
           ),
         ),
       ),

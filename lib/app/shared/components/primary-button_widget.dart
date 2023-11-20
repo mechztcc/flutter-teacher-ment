@@ -22,7 +22,11 @@ class PrimaryButtonWidget extends StatelessWidget {
     if (type == 'danger') {
       return Colors.red.shade400;
     }
-    return Colors.blue.shade400;
+
+    if (type == 'primary') {
+      return Colors.blue.shade300;
+    }
+    return Colors.white;
   }
 
   @override
@@ -40,7 +44,7 @@ class PrimaryButtonWidget extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           backgroundColor: getColor(),
           padding: const EdgeInsets.all(12),
-          elevation: 2,
+          elevation: 0,
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(10),
@@ -50,8 +54,8 @@ class PrimaryButtonWidget extends StatelessWidget {
         child: Text(
           isLoading ? 'Loading...' : label,
           style: GoogleFonts.rajdhani(
-            color: Colors.white,
             fontWeight: FontWeight.bold,
+            color: Colors.white,
           ),
         ),
       ),

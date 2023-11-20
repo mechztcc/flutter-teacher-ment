@@ -42,19 +42,19 @@ class _CardRunningLessonWidgetState extends State<CardRunningLessonWidget>
     return FadeTransition(
       opacity: animation,
       child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 15, horizontal: 5),
+        margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            boxShadow: [
+            color: const Color.fromARGB(255, 239, 243, 249),
+            boxShadow: const [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
+                color: Color.fromARGB(255, 210, 212, 217),
                 spreadRadius: 2,
-                blurRadius: 5,
+                blurRadius: 3,
                 offset: Offset(0, 3), // changes position of shadow
               ),
-            ],
-            color: Colors.white),
+            ]),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -165,8 +165,8 @@ class _CardRunningLessonWidgetState extends State<CardRunningLessonWidget>
               onPress: () {},
               isLoading: false,
               label: 'START',
-              type: 'danger',
               height: 45,
+              type: 'primary',
             )
           ],
         ),
