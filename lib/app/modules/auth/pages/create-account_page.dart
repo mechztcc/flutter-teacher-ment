@@ -15,8 +15,13 @@ class CreateAccountPageState extends State<CreateAccountPage> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Center(
-          child: SizedBox(
-            width: MediaQuery.of(context).size.width * 0.9,
+          child: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  colors: [Color(0xff9BB2E5), Colors.white],
+                  begin: Alignment.topCenter),
+            ),
+            width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             child: const Expanded(
               child: Column(

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:peter_space/app/shared/components/animated_button_widget.dart';
 import 'package:peter_space/app/shared/components/badge_level_widget.dart';
-import 'package:peter_space/app/shared/components/simple-badge_widget.dart';
+import 'package:peter_space/app/shared/styles/font_style.dart';
 
 class CardRunningLessonWidget extends StatefulWidget {
   final String title;
@@ -39,132 +38,26 @@ class _CardRunningLessonWidgetState extends State<CardRunningLessonWidget>
 
   @override
   Widget build(BuildContext context) {
-    return FadeTransition(
-      opacity: animation,
-      child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
-        padding: const EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: Colors.white,
-          boxShadow: const [
-            BoxShadow(
-              color: Color.fromARGB(255, 210, 212, 217),
-              spreadRadius: 2,
-              blurRadius: 3,
-              offset: Offset(0, 3), // changes position of shadow
-            ),
-          ],
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(
-              height: 10,
-            ),
-            const Row(
-              children: [
-                BadgeLevelWidget(
-                  level: 3,
-                  label: 'Expert',
-                ),
-                SimpleBadgeWidget(
-                  label: '5 Points',
-                  type: 'points',
-                ),
-                SimpleBadgeWidget(
-                  label: '5 Questions',
-                  type: 'questions',
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            const SizedBox(
-              width: double.infinity,
-              child: Expanded(child: Divider()),
-            ),
-            const Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  children: [
-                    Icon(
-                      FontAwesomeIcons.scroll,
-                      size: 15,
-                      color: Colors.blue,
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Text('Lesson Name')
-                  ],
-                ),
-                Text('História do brasil')
-              ],
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  children: [
-                    const Icon(
-                      FontAwesomeIcons.graduationCap,
-                      size: 15,
-                      color: Colors.blue,
-                    ),
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.7,
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text('Teacher'),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Icon(
-                            FontAwesomeIcons.circleInfo,
-                            size: 15,
-                            color: Colors.grey,
-                          )
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-                const Text('Teacher Alberto')
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Icon(
-                  FontAwesomeIcons.calendar,
-                  size: 15,
-                ),
-                SizedBox(
-                  width: 5,
-                ),
-                Text('End at: 22/10/2022 10:00'),
-              ],
-            ),
-            const AnimatedButtonWidget(id: '1'),
-          ],
-        ),
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+      padding: const EdgeInsets.all(15),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: Colors.white,
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('Atividade de História', style: FontStyle().span()),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('10 Questions', style: FontStyle().small()),
+            ],
+          ),
+          const AnimatedButtonWidget(id: '1'),
+        ],
       ),
     );
   }

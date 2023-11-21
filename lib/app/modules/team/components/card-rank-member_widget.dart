@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:peter_space/app/shared/components/simple-badge_widget.dart';
 import 'package:peter_space/app/shared/styles/font_style.dart';
 
 class CardRankMemberWidget extends StatelessWidget {
@@ -15,42 +14,42 @@ class CardRankMemberWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+      margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
       padding: const EdgeInsets.all(10),
       width: double.infinity,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(20),
         color: Colors.white,
-        boxShadow: const [
-          BoxShadow(
-            color: Color.fromARGB(255, 210, 212, 217),
-            spreadRadius: 2,
-            blurRadius: 3,
-            offset: Offset(0, 3), // changes position of shadow
-          ),
-        ],
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(FontAwesomeIcons.user),
+          SizedBox(
+            height: 50,
+            child: CircleAvatar(
+              radius: 56,
+              child: Padding(
+                padding: const EdgeInsets.all(2), // Border radius
+                child: ClipOval(
+                  child: Image.asset(
+                    'assets/cat.jpg',
+                  ),
+                ),
+              ),
+            ),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Student name',
+                'Clara Batista',
                 style: FontStyle().span(),
               ),
-              const Row(
-                children: [
-                  SimpleBadgeWidget(label: 'Diamond', type: 'diamond'),
-                  SimpleBadgeWidget(label: '89 Points', type: 'points'),
-                ],
-              ),
+              Text(
+                '28 points',
+                style: FontStyle().small(),
+              )
             ],
           ),
           IconButton(

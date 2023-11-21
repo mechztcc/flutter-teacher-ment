@@ -28,42 +28,45 @@ class TeamPageState extends State<TeamPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: const NavegationBarWidget(index: 1),
-      body: Column(
-        children: <Widget>[
-          Observer(
-            builder: (_) => const UserInformationWidget(name: 'Alberto paiva'),
-          ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * .9,
-            height: MediaQuery.of(context).size.height * .7,
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Team Name',
-                    style: FontStyle().subtitle(),
-                  ),
-                  Text(
-                    'Updated at 12:00',
-                    style: FontStyle().span(),
-                  ),
-                  const CardRankMemberWidget(position: 1),
-                  const CardRankMemberWidget(position: 2),
-                  const CardRankMemberWidget(position: 3),
-                  const CardRankMemberWidget(position: 4),
-                  const CardRankMemberWidget(position: 5),
-                  const CardRankMemberWidget(position: 6),
-                  const CardRankMemberWidget(position: 7),
-                  const CardRankMemberWidget(position: 4),
-                  const CardRankMemberWidget(position: 5),
-                  const CardRankMemberWidget(position: 6),
-                  const CardRankMemberWidget(position: 7),
-                ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Container(
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(colors: [
+                  Color(0xff9BB2E5),
+                  Color.fromARGB(255, 197, 214, 252)
+                ], begin: Alignment.topCenter),
               ),
-            ),
-          )
-        ],
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Team Name',
+                      style: FontStyle().subtitle(),
+                    ),
+                    Text(
+                      'Updated at 12:00',
+                      style: FontStyle().span(),
+                    ),
+                    const CardRankMemberWidget(position: 1),
+                    const CardRankMemberWidget(position: 2),
+                    const CardRankMemberWidget(position: 3),
+                    const CardRankMemberWidget(position: 4),
+                    const CardRankMemberWidget(position: 5),
+                    const CardRankMemberWidget(position: 6),
+                    const CardRankMemberWidget(position: 7),
+                    const CardRankMemberWidget(position: 4),
+                    const CardRankMemberWidget(position: 5),
+                    const CardRankMemberWidget(position: 6),
+                    const CardRankMemberWidget(position: 7),
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

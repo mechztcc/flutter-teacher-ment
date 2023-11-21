@@ -3,7 +3,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:peter_space/app/modules/auth/shared/stores/login/login_store.dart';
-import 'package:peter_space/app/shared/components/input-text_widget.dart';
+import 'package:peter_space/app/shared/components/input_text_widget.dart';
 import 'package:peter_space/app/shared/components/primary-button_widget.dart';
 import 'package:peter_space/app/shared/styles/font_style.dart';
 import 'package:validatorless/validatorless.dart';
@@ -29,9 +29,9 @@ class _FormLoginWidgetState extends State<FormLoginWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(20),
           color: Colors.white,
           boxShadow: const [
             BoxShadow(
@@ -42,7 +42,7 @@ class _FormLoginWidgetState extends State<FormLoginWidget> {
             ),
           ],
         ),
-        width: double.infinity,
+        width: MediaQuery.of(context).size.width * .9,
         child: Form(
           key: store.formKey,
           autovalidateMode: AutovalidateMode.always,
@@ -93,6 +93,7 @@ class _FormLoginWidgetState extends State<FormLoginWidget> {
                   type: 'primary',
                   isLoading: store.isloading,
                   label: 'Login',
+                  height: 50,
                 ),
               ),
               Padding(

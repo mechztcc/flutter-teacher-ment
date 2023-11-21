@@ -15,7 +15,7 @@ class AnimatedButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 10),
+      margin: const EdgeInsets.only(top: 20),
       child: AB.AnimatedButton(
         animatedOn: AB.AnimatedOn.onTap,
         onPress: () {
@@ -27,19 +27,19 @@ class AnimatedButtonWidget extends StatelessWidget {
         isReverse: true,
         animationDuration: const Duration(milliseconds: 800),
         transitionType: AB.TransitionType.LEFT_TO_RIGHT,
-        backgroundColor: Colors.blue.shade400,
+        backgroundColor: const Color(0xff9BB2E5),
         textStyle: GoogleFonts.rajdhani(
           fontSize: 20,
           letterSpacing: 1,
           color: Colors.white,
-          fontWeight: FontWeight.w300,
+          fontWeight: FontWeight.w600,
         ),
         selectedBackgroundColor: Colors.red.shade400,
         selectedTextColor: Colors.white,
         selectedText: 'STARTING!',
         borderColor: Colors.white,
         borderWidth: 1,
-        borderRadius: 10,
+        borderRadius: 20,
       ),
     );
   }

@@ -27,8 +27,14 @@ class LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: Center(
         child: SingleChildScrollView(
-          child: SizedBox(
-            width: MediaQuery.of(context).size.width * 0.9,
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  colors: [Color(0xff9BB2E5), Colors.white],
+                  begin: Alignment.topCenter),
+            ),
             child: const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[FormLoginWidget()],

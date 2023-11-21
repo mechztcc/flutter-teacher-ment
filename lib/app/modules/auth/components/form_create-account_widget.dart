@@ -4,7 +4,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:peter_space/app/modules/auth/shared/stores/create_account/create_account_store.dart';
-import 'package:peter_space/app/shared/components/input-text_widget.dart';
+import 'package:peter_space/app/shared/components/input_text_widget.dart';
 import 'package:peter_space/app/shared/components/primary-button_widget.dart';
 import 'package:peter_space/app/shared/styles/font_style.dart';
 import 'package:validatorless/validatorless.dart';
@@ -32,20 +32,20 @@ class _FormCreateAccountWidgetState extends State<FormCreateAccountWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(20),
         color: Colors.white,
         boxShadow: const [
           BoxShadow(
-            color: Color.fromARGB(255, 210, 212, 217),
-            spreadRadius: 2,
-            blurRadius: 3,
+            color: Color(0xff9BB2E5),
+            spreadRadius: 1,
+            blurRadius: 10,
             offset: Offset(0, 3), // changes position of shadow
           ),
         ],
       ),
-      width: double.infinity,
+      width: MediaQuery.of(context).size.width * .9,
       child: Form(
         key: store.formKey,
         autovalidateMode: AutovalidateMode.always,
@@ -92,21 +92,6 @@ class _FormCreateAccountWidgetState extends State<FormCreateAccountWidget> {
                 Validatorless.min(6, 'Password required min 6 characters')
               ]),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.check_box_outlined,
-                    color: Colors.blue.shade400,
-                  ),
-                  Text(
-                    'Yes, I understand and accept the terms of service',
-                    style: FontStyle().small(),
-                  ),
-                ],
-              ),
-            ),
             Observer(
               builder: (context) => PrimaryButtonWidget(
                 onPress: () {
@@ -115,6 +100,7 @@ class _FormCreateAccountWidgetState extends State<FormCreateAccountWidget> {
                 type: 'primary',
                 isLoading: store.isloading,
                 label: 'Create Account',
+                height: 50,
               ),
             ),
             Padding(

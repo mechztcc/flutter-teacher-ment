@@ -24,7 +24,7 @@ class PrimaryButtonWidget extends StatelessWidget {
     }
 
     if (type == 'primary') {
-      return Colors.blue.shade300;
+      return Color(0xff9BB2E5);
     }
 
     if (isLoading) {
@@ -36,7 +36,7 @@ class PrimaryButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 15),
+      margin: const EdgeInsets.only(top: 5),
       width: double.infinity,
       height: height ?? 65,
       child: ElevatedButton(
