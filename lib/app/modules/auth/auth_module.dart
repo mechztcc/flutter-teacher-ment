@@ -1,11 +1,10 @@
-import 'package:peter_space/app/modules/auth/shared/stores/create_account/create_account_store.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:peter_space/app/modules/auth/pages/create-account_page.dart';
 import 'package:peter_space/app/modules/auth/pages/login_page.dart';
 import 'package:peter_space/app/modules/auth/shared/repository/auth_repository.dart';
 import 'package:peter_space/app/modules/auth/shared/services/auth_service.dart';
+import 'package:peter_space/app/modules/auth/shared/stores/create_account/create_account_store.dart';
 import 'package:peter_space/app/modules/auth/shared/stores/login/login_store.dart';
-import 'package:peter_space/app/modules/home/home_module.dart';
 import 'package:peter_space/app/shared/services/http_service.dart';
 
 class AuthModule extends Module {
@@ -26,5 +25,5 @@ class AuthModule extends Module {
   ];
 
   @override
-  List<Module> get imports => [HomeModule()];
+  List<Module> get imports => [];
 }

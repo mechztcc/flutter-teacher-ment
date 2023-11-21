@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:peter_space/app/shared/components/animated_button_widget.dart';
 import 'package:peter_space/app/shared/components/badge_level_widget.dart';
-import 'package:peter_space/app/shared/components/primary-button_widget.dart';
 import 'package:peter_space/app/shared/components/simple-badge_widget.dart';
 
 class CardRunningLessonWidget extends StatefulWidget {
@@ -162,13 +162,7 @@ class _CardRunningLessonWidgetState extends State<CardRunningLessonWidget>
                 Text('End at: 22/10/2022 10:00'),
               ],
             ),
-            PrimaryButtonWidget(
-              onPress: () {},
-              isLoading: false,
-              label: 'START',
-              height: 45,
-              type: 'primary',
-            )
+            const AnimatedButtonWidget(),
           ],
         ),
       ),
