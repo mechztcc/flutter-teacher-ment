@@ -162,7 +162,7 @@ class _CardRunningLessonWidgetState extends State<CardRunningLessonWidget>
                 Text('End at: 22/10/2022 10:00'),
               ],
             ),
-            const AnimatedButtonWidget(),
+            const AnimatedButtonWidget(id: '1'),
           ],
         ),
       ),

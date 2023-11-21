@@ -49,6 +49,10 @@ class SimpleBadgeWidget extends StatelessWidget {
       return Colors.yellow.shade700;
     }
 
+    if (type == 'danger') {
+      return Colors.red.shade400;
+    }
+
     return Colors.purple;
   }
 
