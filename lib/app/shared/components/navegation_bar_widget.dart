@@ -33,14 +33,15 @@ class NavegationBarWidget extends StatelessWidget {
       },
       items: [
         SalomonBottomBarItem(
-          icon: const Icon(Icons.house),
-          title: const Text('Home'),
-        ),
+            icon: const Icon(FontAwesomeIcons.house),
+            title: const Text('Home'),
+            selectedColor: const Color(0xff9BB2E5)),
         SalomonBottomBarItem(
-            icon: const Icon(Icons.supervised_user_circle),
-            title: const Text('Team')),
+            icon: const Icon(FontAwesomeIcons.users),
+            title: const Text('Team'),
+            selectedColor: Colors.purple.shade200),
         SalomonBottomBarItem(
-          icon: const Icon(Icons.settings),
+          icon: const Icon(FontAwesomeIcons.cog),
           title: const Text('Settings'),
         ),
         SalomonBottomBarItem(

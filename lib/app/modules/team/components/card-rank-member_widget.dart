@@ -15,25 +15,26 @@ class CardRankMemberWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(15),
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: Colors.white,
+        color: Color.fromARGB(255, 253, 223, 223),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            height: 50,
+            height: 60,
             child: CircleAvatar(
               radius: 56,
+              backgroundColor: Colors.white,
               child: Padding(
                 padding: const EdgeInsets.all(2), // Border radius
                 child: ClipOval(
                   child: Image.asset(
-                    'assets/cat.jpg',
+                    'assets/pet.jpg',
                   ),
                 ),
               ),
@@ -46,6 +47,9 @@ class CardRankMemberWidget extends StatelessWidget {
                 'Clara Batista',
                 style: FontStyle().span(),
               ),
+              const SizedBox(
+                height: 10,
+              ),
               Text(
                 '28 points',
                 style: FontStyle().small(),
@@ -54,9 +58,13 @@ class CardRankMemberWidget extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(
-              FontAwesomeIcons.rankingStar,
-              color: position <= 3 ? Colors.orange : Colors.grey,
+            icon: CircleAvatar(
+              backgroundColor: Colors.white,
+              child: Icon(
+                FontAwesomeIcons.trophy,
+                size: 20,
+                color: position <= 3 ? Colors.orange : Colors.grey,
+              ),
             ),
           )
         ],

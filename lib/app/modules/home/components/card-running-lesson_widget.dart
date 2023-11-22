@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:peter_space/app/shared/components/animated_button_widget.dart';
-import 'package:peter_space/app/shared/components/badge_level_widget.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:peter_space/app/shared/styles/font_style.dart';
 
 class CardRunningLessonWidget extends StatefulWidget {
@@ -39,24 +39,56 @@ class _CardRunningLessonWidgetState extends State<CardRunningLessonWidget>
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-      padding: const EdgeInsets.all(15),
+      margin: const EdgeInsets.symmetric(vertical: 5),
+      padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: Colors.white,
+        color: const Color(0xff9BB2E5),
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text('Atividade de História', style: FontStyle().span()),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          const CircleAvatar(
+            backgroundColor: Colors.white,
+            child: Icon(
+              FontAwesomeIcons.book,
+              color: Color(0xff9BB2E5),
+            ),
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Text('Atividade de História', style: FontStyle().span()),
+              const SizedBox(
+                height: 10,
+              ),
               Text('10 Questions', style: FontStyle().small()),
             ],
           ),
-          const AnimatedButtonWidget(id: '1'),
+          const Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 20,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+            ],
+          ),
+          GestureDetector(
+            onTap: () {
+              Modular.to.navigate('/question/1');
+            },
+            child: const CircleAvatar(
+              backgroundColor: Colors.white,
+              child: Icon(
+                FontAwesomeIcons.play,
+                color: Color(0xff9BB2E5),
+              ),
+            ),
+          )
         ],
       ),
     );

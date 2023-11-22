@@ -36,14 +36,6 @@ class _FormCreateAccountWidgetState extends State<FormCreateAccountWidget> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: Colors.white,
-        boxShadow: const [
-          BoxShadow(
-            color: Color(0xff9BB2E5),
-            spreadRadius: 1,
-            blurRadius: 10,
-            offset: Offset(0, 3), // changes position of shadow
-          ),
-        ],
       ),
       width: MediaQuery.of(context).size.width * .9,
       child: Form(
@@ -55,11 +47,6 @@ class _FormCreateAccountWidgetState extends State<FormCreateAccountWidget> {
             Text(
               'Create account',
               style: FontStyle().header(),
-            ),
-            Text(
-              'its easy, just take a minute and provided details',
-              textAlign: TextAlign.center,
-              style: FontStyle().span(),
             ),
             const SizedBox(
               height: 20,

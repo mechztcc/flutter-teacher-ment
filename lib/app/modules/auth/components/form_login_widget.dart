@@ -32,15 +32,6 @@ class _FormLoginWidgetState extends State<FormLoginWidget> {
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: Colors.white,
-          boxShadow: const [
-            BoxShadow(
-              color: Color.fromARGB(255, 210, 212, 217),
-              spreadRadius: 2,
-              blurRadius: 3,
-              offset: Offset(0, 3), // changes position of shadow
-            ),
-          ],
         ),
         width: MediaQuery.of(context).size.width * .9,
         child: Form(
@@ -57,12 +48,8 @@ class _FormLoginWidgetState extends State<FormLoginWidget> {
                 'Welcome back',
                 style: FontStyle().header(),
               ),
-              Text(
-                'Please, tap your details',
-                style: FontStyle().span(),
-              ),
               const SizedBox(
-                height: 20,
+                height: 50,
               ),
               InputTextWidget(
                 label: 'Email',
@@ -84,6 +71,9 @@ class _FormLoginWidgetState extends State<FormLoginWidget> {
                   Validatorless.required('Name is required'),
                   Validatorless.min(6, 'Password must be has min 6 characteres')
                 ]),
+              ),
+              const SizedBox(
+                height: 10,
               ),
               Observer(
                 builder: (context) => PrimaryButtonWidget(

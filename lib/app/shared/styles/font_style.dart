@@ -6,7 +6,7 @@ class FontStyle {
     return GoogleFonts.rajdhani(
       fontSize: 40,
       fontWeight: FontWeight.bold,
-      color: Color(0xff698CBF),
+      color: Colors.black,
     );
   }
 
@@ -23,6 +23,7 @@ class FontStyle {
       fontSize: 20,
       fontWeight: FontWeight.w600,
       color: Colors.black,
+      height: 0.2,
     );
   }
 
@@ -30,7 +31,7 @@ class FontStyle {
     return GoogleFonts.rajdhani(
       fontSize: 15,
       fontWeight: FontWeight.w500,
-      color: Colors.grey.shade400,
+      color: Colors.grey.shade800,
     );
   }
 }

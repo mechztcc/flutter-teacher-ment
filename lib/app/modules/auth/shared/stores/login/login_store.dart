@@ -44,7 +44,6 @@ abstract class LoginStoreBase with Store {
         "password": passwordEC.text
       };
       loginData = await authService.onLogin(payload);
-      alert.success(context, 'Login Sucess!');
       final prefs = await SharedPreferences.getInstance();
       prefs.setString('name', loginData!.user!.name!);
       prefs.setString('email', loginData!.user!.email!);

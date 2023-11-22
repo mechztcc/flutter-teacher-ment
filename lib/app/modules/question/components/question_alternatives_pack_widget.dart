@@ -22,6 +22,9 @@ class QuestionAlternativesPackWidget extends StatelessWidget {
           alternative: 'The Last Jedi',
         ),
         QuestionAlternativeWidget(
+          alternative: 'The Last Jedi',
+        ),
+        QuestionAlternativeWidget(
           alternative: 'Not The Phantom Menace',
         ),
       ],

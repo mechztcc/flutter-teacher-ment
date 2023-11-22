@@ -23,8 +23,8 @@ class _QuestionAlternativeWidgetState extends State<QuestionAlternativeWidget> {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: isChecked ? Colors.green : Colors.grey.shade100,
+        borderRadius: BorderRadius.circular(20),
+        color: isChecked ? Colors.green.shade300 : Colors.grey.shade100,
       ),
       margin: const EdgeInsets.symmetric(vertical: 5),
       child: Row(

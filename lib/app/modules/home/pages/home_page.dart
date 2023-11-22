@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:peter_space/app/modules/home/components/list-lessons_widget.dart';
 import 'package:peter_space/app/modules/home/shared/stores/home_store.dart';
+import 'package:peter_space/app/modules/team/components/rank-winner_widget.dart';
 import 'package:peter_space/app/shared/components/navegation_bar_widget.dart';
+import 'package:peter_space/app/shared/styles/font_style.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
@@ -26,24 +29,42 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color(0xff9BB2E5),
+        title: Text(
+          'Welcome Alberto',
+          style: FontStyle().span(),
+        ),
+        actions: [
+          SizedBox(
+            height: 45,
+            child: CircleAvatar(
+              radius: 50,
+              child: ClipOval(
+                child: Image.asset(
+                  'assets/pet.jpg',
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
       bottomNavigationBar: const NavegationBarWidget(
         index: 0,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              width: double.infinity,
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(colors: [
-                  Color(0xff9BB2E5),
-                  Color.fromARGB(255, 197, 214, 252)
-                ], begin: Alignment.topCenter),
-              ),
-              child: ListLessonsWidget(),
-            )
-          ],
+      body: const Center(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ListLessonsWidget(),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );

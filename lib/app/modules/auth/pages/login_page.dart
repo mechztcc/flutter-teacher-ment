@@ -32,7 +32,7 @@ class LoginPageState extends State<LoginPage> {
             height: MediaQuery.of(context).size.height,
             decoration: const BoxDecoration(
               gradient: LinearGradient(
-                  colors: [Color(0xff9BB2E5), Colors.white],
+                  colors: [Colors.white, Colors.white],
                   begin: Alignment.topCenter),
             ),
             child: const Column(

@@ -18,7 +18,7 @@ class CreateAccountPageState extends State<CreateAccountPage> {
           child: Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
-                  colors: [Color(0xff9BB2E5), Colors.white],
+                  colors: [Colors.white, Colors.white],
                   begin: Alignment.topCenter),
             ),
             width: MediaQuery.of(context).size.width,
