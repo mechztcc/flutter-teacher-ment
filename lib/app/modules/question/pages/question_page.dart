@@ -3,8 +3,6 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:peter_space/app/modules/question/components/question_alternatives_pack_widget.dart';
 import 'package:peter_space/app/modules/question/components/question_widget.dart';
-import 'package:peter_space/app/shared/components/simple-badge_widget.dart';
-import 'package:peter_space/app/shared/styles/font_style.dart';
 
 class QuestionPage extends StatefulWidget {
   final String title;

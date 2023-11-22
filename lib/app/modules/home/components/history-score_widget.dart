@@ -22,7 +22,7 @@ class HistoryScoreWidget extends StatelessWidget {
             style: FontStyle().subtitle(),
           ),
           Text(
-            'As atividades ficam disponíveis assim que o seu professor enviar.',
+            'Aqui você acompanha seu desepenho em todas temporadas',
             style: FontStyle().small(),
           ),
           const SizedBox(
