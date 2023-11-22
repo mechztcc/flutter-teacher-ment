@@ -28,6 +28,7 @@ class ListLessonsWidget extends StatelessWidget {
           ),
           NotFoundLessonsWidget(),
           CardRunningLessonWidget(),
+          CardRunningLessonWidget(),
         ],
       ),
     );

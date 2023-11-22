@@ -51,22 +51,25 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: const NavegationBarWidget(
         index: 0,
       ),
-      body: const Center(
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  HistoryScoreWidget(),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  ListLessonsWidget(),
-                ],
-              )
-            ],
+      body: const Padding(
+        padding: EdgeInsets.symmetric(vertical: 30),
+        child: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    HistoryScoreWidget(),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    ListLessonsWidget(),
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),
