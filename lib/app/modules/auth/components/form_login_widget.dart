@@ -45,7 +45,7 @@ class _FormLoginWidgetState extends State<FormLoginWidget> {
                 height: 20,
               ),
               Text(
-                'Welcome back',
+                'Bem vindo',
                 style: FontStyle().header(),
               ),
               const SizedBox(

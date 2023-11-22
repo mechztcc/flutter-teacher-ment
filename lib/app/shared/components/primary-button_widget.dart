@@ -30,6 +30,18 @@ class PrimaryButtonWidget extends StatelessWidget {
     if (isLoading) {
       return Colors.blue.shade200;
     }
+
+    if (type == 'purple') {
+      return Colors.purple.shade100;
+    }
+    return Colors.white;
+  }
+
+  Color getTextColor() {
+    if (type == 'pink') {
+      return const Color.fromARGB(255, 253, 223, 223);
+    }
+
     return Colors.white;
   }
 
@@ -51,16 +63,14 @@ class PrimaryButtonWidget extends StatelessWidget {
           elevation: 0,
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
-              Radius.circular(10),
+              Radius.circular(20),
             ),
           ),
         ),
         child: Text(
           isLoading ? 'Loading...' : label,
           style: GoogleFonts.rajdhani(
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
+              fontWeight: FontWeight.bold, color: Colors.white, fontSize: 20),
         ),
       ),
     );

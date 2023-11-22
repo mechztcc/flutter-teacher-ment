@@ -6,8 +6,10 @@ class InputTextWidget extends StatefulWidget {
   final Icon prependIcon;
   final TextEditingController controller;
   final validator;
+  Function? onPress;
   bool obscure;
   String? type;
+
   InputTextWidget({
     Key? key,
     required this.label,
@@ -15,6 +17,7 @@ class InputTextWidget extends StatefulWidget {
     required this.obscure,
     required this.controller,
     required this.validator,
+    this.onPress,
     this.type,
   }) : super(key: key);
 

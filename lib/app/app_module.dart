@@ -2,6 +2,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:peter_space/app/modules/auth/auth_module.dart';
 import 'package:peter_space/app/modules/home/home_module.dart';
 import 'package:peter_space/app/modules/splash/splash_module.dart';
+import 'package:peter_space/app/modules/team/shared/stores/join_team_store.dart';
 import 'package:peter_space/app/modules/team/team_module.dart';
 import 'package:peter_space/app/modules/question/question_module.dart';
 import 'package:peter_space/app/shared/services/alerts_service.dart';
@@ -12,6 +13,7 @@ class AppModule extends Module {
   final List<Bind> binds = [
     Bind.lazySingleton((i) => LocalStorageService()),
     Bind.lazySingleton((i) => AlertsService()),
+    Bind.lazySingleton((i) => JoinTeamStore(i())),
   ];
 
   @override

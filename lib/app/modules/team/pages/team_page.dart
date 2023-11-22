@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:peter_space/app/modules/home/components/user-information_widget.dart';
 import 'package:peter_space/app/modules/home/shared/stores/home_store.dart';
 import 'package:peter_space/app/modules/team/components/card-rank-member_widget.dart';
 import 'package:peter_space/app/modules/team/components/enter-with-code_widget.dart';
 import 'package:peter_space/app/modules/team/components/rank-winner_widget.dart';
 import 'package:peter_space/app/shared/components/navegation_bar_widget.dart';
-import 'package:peter_space/app/shared/components/simple-badge_widget.dart';
-import 'package:peter_space/app/shared/styles/font_style.dart';
 
 class TeamPage extends StatefulWidget {
   final String title;

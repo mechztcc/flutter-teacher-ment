@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HttpService {
   final Dio dio = Dio();
@@ -9,6 +10,9 @@ class HttpService {
   }
 
   post({required Map<String, dynamic> payload, required String path}) async {
+    final prefs = await SharedPreferences.getInstance();
+    dio.options.headers["authorization"] = "${prefs.getString('token')}";
+
     return await dio.post('$url/$path', data: payload);
   }
 }
