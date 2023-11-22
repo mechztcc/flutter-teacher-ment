@@ -5,6 +5,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:peter_space/app/modules/auth/shared/stores/create_account/create_account_store.dart';
 import 'package:peter_space/app/shared/components/input_text_widget.dart';
+import 'package:peter_space/app/shared/components/logo_widget.dart';
 import 'package:peter_space/app/shared/components/primary-button_widget.dart';
 import 'package:peter_space/app/shared/styles/font_style.dart';
 import 'package:validatorless/validatorless.dart';
@@ -44,6 +45,7 @@ class _FormCreateAccountWidgetState extends State<FormCreateAccountWidget> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const LogoWidget(),
             Text(
               'Create account',
               style: FontStyle().header(),

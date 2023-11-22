@@ -4,6 +4,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:peter_space/app/modules/auth/shared/stores/login/login_store.dart';
 import 'package:peter_space/app/shared/components/input_text_widget.dart';
+import 'package:peter_space/app/shared/components/logo_widget.dart';
 import 'package:peter_space/app/shared/components/primary-button_widget.dart';
 import 'package:peter_space/app/shared/styles/font_style.dart';
 import 'package:validatorless/validatorless.dart';
@@ -41,15 +42,13 @@ class _FormLoginWidgetState extends State<FormLoginWidget> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(
-                height: 20,
-              ),
+              LogoWidget(),
               Text(
                 'Bem vindo',
                 style: FontStyle().header(),
               ),
               const SizedBox(
-                height: 50,
+                height: 20,
               ),
               InputTextWidget(
                 label: 'Email',
@@ -82,7 +81,7 @@ class _FormLoginWidgetState extends State<FormLoginWidget> {
                   },
                   type: 'primary',
                   isLoading: store.isloading,
-                  label: 'Login',
+                  label: 'Entrar',
                   height: 50,
                 ),
               ),
@@ -92,7 +91,7 @@ class _FormLoginWidgetState extends State<FormLoginWidget> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Do not have account?',
+                      'Não possui uma conta?',
                       style: GoogleFonts.rajdhani(),
                     ),
                     GestureDetector(
@@ -100,7 +99,7 @@ class _FormLoginWidgetState extends State<FormLoginWidget> {
                         Modular.to.navigate('/auth/create-account');
                       },
                       child: Text(
-                        ' Register',
+                        ' Registrar',
                         style:
                             GoogleFonts.rajdhani(color: Colors.blue.shade400),
                       ),
