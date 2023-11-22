@@ -43,7 +43,7 @@ class _CardRunningLessonWidgetState extends State<CardRunningLessonWidget>
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: const Color(0xff9BB2E5),
+        color: Color.fromARGB(255, 194, 211, 249),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

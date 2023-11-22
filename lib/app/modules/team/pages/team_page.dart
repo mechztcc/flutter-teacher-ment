@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:peter_space/app/modules/home/components/user-information_widget.dart';
 import 'package:peter_space/app/modules/home/shared/stores/home_store.dart';
 import 'package:peter_space/app/modules/team/components/card-rank-member_widget.dart';
+import 'package:peter_space/app/modules/team/components/enter-with-code_widget.dart';
 import 'package:peter_space/app/modules/team/components/rank-winner_widget.dart';
 import 'package:peter_space/app/shared/components/navegation_bar_widget.dart';
 import 'package:peter_space/app/shared/components/simple-badge_widget.dart';
@@ -43,31 +44,25 @@ class TeamPageState extends State<TeamPage> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Container(
-              height: MediaQuery.of(context).size.height,
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                    colors: [Colors.white, Colors.white],
-                    begin: Alignment.topCenter),
-              ),
-              child: const SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        RankWinnerWidget(),
-                      ],
-                    ),
-                    CardRankMemberWidget(position: 1),
-                    CardRankMemberWidget(position: 2),
-                    CardRankMemberWidget(position: 3),
-                    CardRankMemberWidget(position: 4),
-                    CardRankMemberWidget(position: 5),
-                    CardRankMemberWidget(position: 6),
-                  ],
+            Center(
+              child: SizedBox(
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width * .9,
+                child: const SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          RankWinnerWidget(),
+                        ],
+                      ),
+                      EnterWithCodeWidget(),
+                      CardRankMemberWidget(position: 1)
+                    ],
+                  ),
                 ),
               ),
             )

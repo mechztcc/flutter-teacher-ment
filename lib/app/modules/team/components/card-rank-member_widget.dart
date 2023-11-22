@@ -14,7 +14,7 @@ class CardRankMemberWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+      margin: const EdgeInsets.symmetric(vertical: 5),
       padding: const EdgeInsets.all(15),
       width: double.infinity,
       decoration: BoxDecoration(

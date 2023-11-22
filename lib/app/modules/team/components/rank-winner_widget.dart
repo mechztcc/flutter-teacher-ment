@@ -16,9 +16,9 @@ class RankWinnerWidget extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 50,
-            backgroundColor: Colors.yellow,
+            backgroundColor: Colors.white,
             child: Padding(
-              padding: const EdgeInsets.all(5.0),
+              padding: const EdgeInsets.all(7.0),
               child: ClipOval(
                 child: Image.asset(
                   'assets/pet.jpg',

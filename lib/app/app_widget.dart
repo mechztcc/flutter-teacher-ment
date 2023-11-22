@@ -11,7 +11,7 @@ class AppWidget extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         colorScheme: ColorScheme.fromSwatch(
-          backgroundColor: Color(0xffEBEBEB),
+          backgroundColor: Color.fromARGB(255, 243, 242, 242),
         ),
       ),
       routerDelegate: Modular.routerDelegate,
