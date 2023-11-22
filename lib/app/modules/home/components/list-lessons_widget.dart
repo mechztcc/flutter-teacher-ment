@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:peter_space/app/modules/home/components/card-running-lesson_widget.dart';
+import 'package:peter_space/app/modules/home/not_found_lessons_widget.dart';
 import 'package:peter_space/app/shared/styles/font_style.dart';
 
 class ListLessonsWidget extends StatelessWidget {
@@ -15,16 +16,17 @@ class ListLessonsWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Running Lessons',
+            'Atividades',
             style: FontStyle().subtitle(),
+          ),
+          Text(
+            'As atividades ficam disponíveis assim que o seu professor enviar.',
+            style: FontStyle().small(),
           ),
           const SizedBox(
             height: 15,
           ),
-          CardRunningLessonWidget(),
-          CardRunningLessonWidget(),
-          CardRunningLessonWidget(),
-          CardRunningLessonWidget(),
+          NotFoundLessonsWidget(),
           CardRunningLessonWidget(),
         ],
       ),

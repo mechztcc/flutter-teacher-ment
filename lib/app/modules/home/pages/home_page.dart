@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:peter_space/app/modules/home/components/history-score_widget.dart';
 import 'package:peter_space/app/modules/home/components/list-lessons_widget.dart';
 import 'package:peter_space/app/modules/home/shared/stores/home_store.dart';
-import 'package:peter_space/app/modules/team/components/rank-winner_widget.dart';
 import 'package:peter_space/app/shared/components/navegation_bar_widget.dart';
 import 'package:peter_space/app/shared/styles/font_style.dart';
 
@@ -60,6 +59,10 @@ class _HomePageState extends State<HomePage> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  HistoryScoreWidget(),
+                  SizedBox(
+                    height: 30,
+                  ),
                   ListLessonsWidget(),
                 ],
               )

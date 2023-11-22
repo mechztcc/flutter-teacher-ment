@@ -51,7 +51,7 @@ class _CardRunningLessonWidgetState extends State<CardRunningLessonWidget>
           const CircleAvatar(
             backgroundColor: Colors.white,
             child: Icon(
-              FontAwesomeIcons.book,
+              FontAwesomeIcons.bookOpen,
               color: Color(0xff9BB2E5),
             ),
           ),

@@ -23,7 +23,6 @@ class FontStyle {
       fontSize: 20,
       fontWeight: FontWeight.w600,
       color: const Color.fromARGB(255, 42, 39, 39),
-      height: 0.2,
     );
   }
 
