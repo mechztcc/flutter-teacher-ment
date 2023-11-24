@@ -6,7 +6,9 @@ class HttpService {
   final String url = 'http://192.168.1.12:3000';
 
   get({required String path}) async {
-    return await dio.get(path);
+    final prefs = await SharedPreferences.getInstance();
+    dio.options.headers["authorization"] = "${prefs.getString('token')}";
+    return await dio.get('$url/$path');
   }
 
   post({required Map<String, dynamic> payload, required String path}) async {

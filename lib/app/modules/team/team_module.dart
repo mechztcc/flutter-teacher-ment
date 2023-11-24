@@ -1,3 +1,5 @@
+import 'package:peter_space/app/modules/home/shared/repository/home_repository.dart';
+import 'package:peter_space/app/modules/home/shared/services/home_service.dart';
 import 'package:peter_space/app/modules/team/shared/stores/join_team_store.dart';
 import 'package:peter_space/app/modules/team/shared/services/team_service.dart';
 import 'package:peter_space/app/modules/team/shared/repository/team_repository.dart';
@@ -12,7 +14,9 @@ class TeamModule extends Module {
     Bind.lazySingleton((i) => TeamService(i())),
     Bind.lazySingleton((i) => JoinTeamStore(i())),
     Bind.lazySingleton((i) => TeamRepository(i())),
-    Bind.lazySingleton((i) => HomeStore()),
+    Bind.lazySingleton((i) => HomeStore(i())),
+    Bind.lazySingleton((i) => HomeService(i())),
+    Bind.lazySingleton((i) => HomeRepository(i())),
     Bind.lazySingleton((i) => HttpService())
   ];
 

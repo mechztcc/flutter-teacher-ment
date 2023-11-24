@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:peter_space/app/modules/home/shared/models/lesson.dart';
 import 'package:peter_space/app/shared/styles/font_style.dart';
 
 class CardRunningLessonWidget extends StatefulWidget {
   final String title;
+  final Lessons lesson;
 
-  const CardRunningLessonWidget(
-      {Key? key, this.title = "CardRunningLessonWidget"})
-      : super(key: key);
+  const CardRunningLessonWidget({
+    Key? key,
+    this.title = "CardRunningLessonWidget",
+    required this.lesson,
+  }) : super(key: key);
 
   @override
   State<CardRunningLessonWidget> createState() =>
@@ -58,7 +62,16 @@ class _CardRunningLessonWidgetState extends State<CardRunningLessonWidget>
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Atividade de História', style: FontStyle().span()),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * .5,
+                child: Flexible(
+                  child: Text(
+                    '${widget.lesson.name}',
+                    style: FontStyle().span(),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+              ),
               const SizedBox(
                 height: 10,
               ),

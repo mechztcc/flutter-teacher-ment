@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     store = Modular.get<HomeStore>();
     store.initStore();
+    store.listLessons();
   }
 
   @override
@@ -63,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     height: 30,
                   ),
-                  ListLessonsWidget(),
+                  ListLessonsWidget()
                 ],
               )
             ],
